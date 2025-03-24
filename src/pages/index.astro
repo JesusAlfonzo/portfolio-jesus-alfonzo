@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
+import ProjectCard from "../components/Card.astro";
+import Footer from "../components/Footer.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -8,19 +10,22 @@ import Navigation from "../components/Navigation.astro";
 
 <Layout>
   <!-- Navigation Bar -->
+  <section id="main"></section>
   <header
     style="position: sticky; top: 0; z-index: 1;  backdrop-filter: blur(20px);"
     class="shadow-2xl animate-fade animate-once animate-duration-[1500ms] animate-delay-0 animate-ease-in-out"
+   
   >
     <Navigation />
   </header>
 
   <!-- Section - Presentation Card -->
-  <section id="main">
+  <section>
     <img
       class="drop-shadow-2xl animate-fade-down animate-once animate-duration-[1500ms] animate-delay-0 animate-ease-in-out"
       style="height: 400px; border-radius: 100px; padding: 20px; margin-top: 30px; display: block; margin-left: auto; margin-right: auto;"
-      src="/profile-photo.JPEG" alt="Descripción de la foto de perfil"
+      src="/profile-photo.JPEG"
+      alt="Descripción de la foto de perfil"
       alt="Foto-Jesus-Alfonzo"
     />
     <!-- Nombre -->
@@ -80,91 +85,60 @@ import Navigation from "../components/Navigation.astro";
   </section>
 
   <!-- Section - Biografia -->
-  <section class="mt-20 animate-fade-down animate-once animate-ease-in-out">
-    <h1 style="font-size: 50px; font-weight: bold; text-align: center;">
-      Biografia
-    </h1>
-    <p
-      style="margin-bottom: 10px; font-size: 20px; font-weight: 400; width: 50%; margin-left: auto; margin-right: auto; text-align: center;"
-    >
-      Estudiante - Tecnico Superior en Informatica, Residente en Caracas,
-      Venezuela, especializado en Creacion de Paginas Web.
-    </p>
+   <section id="bio"></section>
 
+  <section
+    class="mt-20 mb-20 animate-fade-down animate-once animate-duration-[1500ms] animate-delay-[850ms] animate-ease-in-out"
+  >
     <h1 style="font-size: 50px; font-weight: bold; text-align: center;">
       Biografia
     </h1>
     <p
       style="margin-bottom: 10px; font-size: 20px; font-weight: 400; width: 50%; margin-left: auto; margin-right: auto; text-align: center;"
     >
-      Estudiante - Tecnico Superior en Informatica, Residente en Caracas,
-      Venezuela, especializado en Creacion de Paginas Web.
-    </p>
-
-    <h1 style="font-size: 50px; font-weight: bold; text-align: center;">
-      Biografia
-    </h1>
-    <p
-      style="margin-bottom: 10px; font-size: 20px; font-weight: 400; width: 50%; margin-left: auto; margin-right: auto; text-align: center;"
-    >
-      Estudiante - Tecnico Superior en Informatica, Residente en Caracas,
-      Venezuela, especializado en Creacion de Paginas Web.
-    </p>
-
-    <h1 style="font-size: 50px; font-weight: bold; text-align: center;">
-      Biografia
-    </h1>
-    <p
-      style="margin-bottom: 10px; font-size: 20px; font-weight: 400; width: 50%; margin-left: auto; margin-right: auto; text-align: center;"
-    >
-      Estudiante - Tecnico Superior en Informatica, Residente en Caracas,
-      Venezuela, especializado en Creacion de Paginas Web.
-    </p>
-
-    <h1 style="font-size: 50px; font-weight: bold; text-align: center;">
-      Biografia
-    </h1>
-    <p
-      style="margin-bottom: 10px; font-size: 20px; font-weight: 400; width: 50%; margin-left: auto; margin-right: auto; text-align: center;"
-    >
-      Estudiante - Tecnico Superior en Informatica, Residente en Caracas,
-      Venezuela, especializado en Creacion de Paginas Web.
+      Soy un desarrollador web frontend con residencia en la vibrante ciudad de
+      Caracas, Venezuela, y actualmente curso estudios de TSU en Informática en
+      el IUJO Catia. Con un año de experiencia en el desarrollo web, me he
+      especializado en la creación de interfaces de usuario atractivas y
+      funcionales. Mi pasión radica en transformar ideas en experiencias
+      digitales interactivas, siempre buscando mantenerme actualizado con las
+      últimas tendencias y tecnologías del frontend para ofrecer soluciones
+      innovadoras y de alta calidad.
     </p>
   </section>
 
+  <section id="project"
+    class="p-5 animate-fade-down animate-once animate-duration-[1500ms] animate-delay-[850ms] animate-ease-in-out"
+  >
+    <h1 style="font-size: 50px; font-weight: bold; text-align: center;">
+      Proyectos Personales
+    </h1>
+    <p
+      style="margin-bottom: 10px; font-size: 20px; font-weight: 400; width: 50%; margin-left: auto; margin-right: auto; text-align: center;"
+    >
+      Una pequeña selección de mis mejores proyectos.
+    </p>
 
-  <!-- <section class="mt-20 animate-fade-down animate-once animate-ease-in-out">
-    <h1 style="font-size: 50px; font-weight: bold; text-align: center;">
-      Biografia
-    </h1>
-    <p
-      style="margin-bottom: 10px; font-size: 20px; font-weight: 400; width: 50%; margin-left: auto; margin-right: auto; text-align: center;"
-    >
-      Estudiante - Tecnico Superior en Informatica, Residente en Caracas,
-      Venezuela, especializado en Creacion de Paginas Web.
-    </p>
+    <div class="flex flex-col md:flex-row flex-wrap justify-center gap-8 p-10">
+      <ProjectCard
+        href="https://github.com/JesusAlfonzo/dcp-project"
+        imageSrc="/profile-photo.JPEG"
+        title="Sistema de Gestion y Control - Di Catia Pizza"
+        description="Un sistema de control y gestion para un restaurant de pizzas de la localidad de catia."
+      />
+      <ProjectCard
+        href="https://github.com/JesusAlfonzo/promedio-app"
+        imageSrc="/profile-photo.JPEG"
+        title="Aplicacion para Promedio de Notas"
+        description="una aplicacion escrita en JavaScript para obtener un promedio de notas."
+      />
+      <ProjectCard
+        href="https://github.com/JesusAlfonzo/Login-Catalogo"
+        imageSrc="/profile-photo.JPEG"
+        title="Login para un Catalogo"
+        description="Una pagina web con una plantilla de un login para un catalogo web."
+      />
+    </div>
   </section>
-  <section class="mt-20 animate-fade-down animate-once animate-ease-in-out">
-    <h1 style="font-size: 50px; font-weight: bold; text-align: center;">
-      Biografia
-    </h1>
-    <p
-      style="margin-bottom: 10px; font-size: 20px; font-weight: 400; width: 50%; margin-left: auto; margin-right: auto; text-align: center;"
-    >
-      Estudiante - Tecnico Superior en Informatica, Residente en Caracas,
-      Venezuela, especializado en Creacion de Paginas Web.
-    </p>
-  </section>
-  <section class="mt-20 animate-fade-down animate-once animate-ease-in-out">
-    <h1 style="font-size: 50px; font-weight: bold; text-align: center;">
-      Biografia
-    </h1>
-    <p
-      style="margin-bottom: 10px; font-size: 20px; font-weight: 400; width: 50%; margin-left: auto; margin-right: auto; text-align: center;"
-    >
-      Estudiante - Tecnico Superior en Informatica, Residente en Caracas,
-      Venezuela, especializado en Creacion de Paginas Web.
-    </p>
-  </section> -->
-
+  <Footer />
 </Layout>
